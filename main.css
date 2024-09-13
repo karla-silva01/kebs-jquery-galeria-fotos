@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    background-color: #5f27cd;
+    padding: 16px 0;
+    color: #fff;
+    display: flex;
+    border-bottom: 16px solid #341f97;
+    justify-content: center;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+header button{
+    margin-left: 16px;
+}
+
+form{
+    background-color: #c8d6e5;
+    padding: 24px 0;
+    text-align: center;
+    display: none;
+}
+
+form h2{
+    margin-bottom: 16px;
+}
+
+input,
+button{
+    padding: 8px;
+}
+
+button{
+    background-color: #009432;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+}
+
+#botao-cancelar{
+    background-color: red;
+}
+
+ul {
+    display: flex; /* Coloca as imagens uma ao lado da outra*/
+    flex-wrap: wrap; /* Quando chegar ao limite da página, vai criar uma nova linha*/
+}
+
+ul li {
+    max-width: 25%; /*Largura máxima dos itens */
+    list-style: none; /*Retira o estilo da lista, tipo ponto, traço...etc.*/
+    position: relative; /*Elemento pai da imagem. Para nã vazar o texto da imagem, ele tem que ter position relative*/
+    max-height: 280px; /*Limita a altura do li*/
+    overflow-y: hidden; /*Oculta tudo que estiver vazando do tamanho máximo*/
+}
+
+ul li img {
+    width: 100%; /*As imagens se adequarão ao tamanho da página*/
+}
+
+.overlay-imagem-link { /*Usa-se ponto(.) para classes*/
+    padding: 16px; /*Espaçamento interno*/
+    background-color: rgba(0, 0, 0, 0.7); /*Usa-se rgba quando se quer colocar uma cor , mas com 70% opacidade, 30 %transparência*/
+    position: absolute; /* Canto inferior do li*/
+    bottom: 0; /*extremidade inferior*/
+    left: 0;
+    width: 100%; /*largura*/
+    opacity: 0; /*A opacidade 0 faz com que o texto fique invisível*/
+    transition: all ease .5s; /*Todas as transições de aparecer e desaparecer o testo terão um tempo de meio segundo*/
+}
+
+.overlay-imagem-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul li:hover .overlay-imagem-link { /*Quando o li estiver com a propriedade hover, ele passará a ter a opacidade de 1*/
+    opacity: 1;
+}
